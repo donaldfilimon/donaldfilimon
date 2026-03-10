@@ -48,9 +48,11 @@ Public/
 .cargo/*
 !.cargo/config.toml
 
+# Project repos (independent git repos, not submodules)
+abi/
+lilex/
+
 # Tracked items (explicitly not ignored):
-# abi/
-# lilex/
 # CLAUDE.md
 # .gitconfig
 # .zshrc
