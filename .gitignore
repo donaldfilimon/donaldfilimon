@@ -1,0 +1,57 @@
+# macOS
+*.DS_Store
+
+# Caches and package managers
+.cache/
+.npm/
+.rustup/
+.local/
+.zvm/
+
+# AI/editor tools
+.codex/
+.cursor/
+.gemini/
+.claude/
+.claude.json
+
+# Shell history and sessions
+.zsh_history
+.zsh_sessions/
+
+# Misc dotfiles
+.CFUserTextEncoding
+.viminfo
+.wget-hsts
+
+# System directories
+Applications/
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+
+# Config (except specific dotfiles)
+.config/
+
+# Trash
+.Trash/
+
+# Swift
+.swiftpm/
+
+# Cargo (ignore all except config.toml)
+.cargo/*
+!.cargo/config.toml
+
+# Tracked items (explicitly not ignored):
+# abi/
+# lilex/
+# CLAUDE.md
+# .gitconfig
+# .zshrc
+# .zprofile
