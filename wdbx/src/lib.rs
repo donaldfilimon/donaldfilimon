@@ -27,3 +27,18 @@ pub fn div(a: &Array, b: &Array) -> Array {
 pub fn matmul(a: &Array, b: &Array) -> Array {
     mlx_rs::ops::matmul(a, b).expect("Matmul failed")
 }
+
+pub struct Linear {
+    pub weight: Array,
+    pub bias: Array,
+}
+
+impl Linear {
+    pub fn new(weight: Array, bias: Array) -> Self {
+        Self { weight, bias }
+    }
+
+    pub fn forward(&self, x: &Array) -> Array {
+        add(&matmul(x, &self.weight), &self.bias)
+    }
+}

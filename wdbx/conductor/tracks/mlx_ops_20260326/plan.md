@@ -12,9 +12,9 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Foundation and Tensor Operations' (Protocol in workflow.md) (a152994)
 
 ## Phase 2: Simple Inference and Benchmarking
-- [ ] Task: Linear Layer Implementation
-    - [ ] Write tests for a simple Linear layer forward pass
-    - [ ] Implement Linear layer logic
+- [x] Task: Linear Layer Implementation
+    - [x] Write tests for a simple Linear layer forward pass
+    - [x] Implement Linear layer logic
 - [ ] Task: CLI Benchmark Command
     - [ ] Write tests for CLI command parsing for `benchmark`
     - [ ] Implement `benchmark` command using `clap`
