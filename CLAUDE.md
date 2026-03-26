@@ -17,7 +17,7 @@ Each project has its own `CLAUDE.md`, `AGENTS.md`, and task tracking (`tasks/tod
 
 | Tool | Version | Source | Notes |
 |------|---------|--------|-------|
-| Zig | `0.16.0-dev.1503+738d2be9d` | `abi/.zigversion` | Dev build pinned; do not upgrade without testing |
+| Zig | `0.16.0-dev.2984+cb7d2b056` | `abi/.zigversion` | Dev build pinned; do not upgrade without testing |
 | Rust | stable (edition 2024) | `lilex/rust-toolchain.toml` | Components: rustfmt, clippy |
 | trunk | latest | `cargo install trunk` | Required for Tauri/WASM desktop builds |
 | cargo-watch | latest | `cargo install cargo-watch` | Optional; useful for dev loop |
@@ -72,12 +72,14 @@ cd ~/lilex && cargo test --no-default-features
 
 ```bash
 cd ~/abi
-zig build test --summary all          # 1290 tests
-zig build feature-tests --summary all # 2836 tests
-zig build full-check                  # format + tests + flags + CLI smoke
-zig build verify-all                  # release gate
-zig build lint                        # check formatting
-zig build fix                         # auto-format
+./build.sh test --summary all          # ~3175 tests (macOS 26.4+ requires build.sh)
+./build.sh feature-tests --summary all # feature integration + parity tests
+./build.sh full-check                  # format + tests + flags + CLI smoke
+./build.sh verify-all                  # release gate
+./build.sh lint                        # check formatting
+./build.sh fix                         # auto-format
+./build.sh cli && zig-out/bin/abi doctor  # build + verify CLI
+# On Linux / older macOS, use `zig build` directly instead of `./build.sh`
 ```
 
 Key pattern: every feature in `src/features/<name>/` has `mod.zig` + `stub.zig` — both must stay in sync.
@@ -116,7 +118,7 @@ When working on shared concepts:
 1. Run the full test suite in the project you changed first.
 2. If the change touches WDBX or persona logic, run the other project's tests too.
 3. Use the verification gates before marking work done:
-   - ABI: `zig build full-check`
+   - ABI: `./build.sh full-check` (or `zig build full-check` on Linux)
    - Lilex: `cargo test --no-default-features && cargo clippy --all-targets --no-default-features`
 
 ### Task Workflow
@@ -128,7 +130,8 @@ When working on shared concepts:
 
 ## Environment Notes
 
-- **macOS (Darwin 25+)**: ABI has a known Zig linker issue — use CEL toolchain (`./tools/scripts/cel_migrate.sh`) or fallback builds.
+- **macOS (Darwin 25+)**: Zig's internal LLD linker can't link on macOS 26.4+ — use `./build.sh` wrapper instead of `zig build`. See `abi/CLAUDE.md` for details.
+- **ABI CLI**: installed at `~/.local/bin/abi` (symlinked from `~/abi/zig-out/bin/abi`). Run `abi doctor` to verify.
 - **Package managers**: Homebrew (`/opt/homebrew`), Cargo, npm/bun available.
 
 ## Workflow Contract
