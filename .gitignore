@@ -14,15 +14,27 @@
 .gemini/
 .claude/
 .claude.json
+.claude.json.backup
+.cagent/
+.serena/
+.tabby-client/
+.colab/
 
 # Shell history and sessions
 .zsh_history
 .zsh_sessions/
+.bash_history
+.bash_profile
+.zcompdump*
+.zfunc/
+.python_history
+.erlang.cookie
 
 # Misc dotfiles
 .CFUserTextEncoding
 .viminfo
 .wget-hsts
+.thumbnails/
 
 # System directories
 Applications/
@@ -43,17 +55,63 @@ Public/
 
 # Swift
 .swiftpm/
+.swift-version
+.swiftly/
+swiftly.pkg
 
 # Cargo (ignore all except config.toml)
 .cargo/*
 !.cargo/config.toml
 
+# Python / Conda
+.anaconda/
+.conda/
+miniconda3/
+
+# Node / Bun
+.nvm/
+.bun/
+
+# AI / ML tools
+.ollama/
+.lmstudio/
+.lmstudio-home-pointer
+.audio-tts/
+mlx-lm/
+
+# Container / VM
+.lima/
+
+# Misc tools
+.openclaw/
+.pi/
+.t3/
+
 # Project repos (independent git repos, not submodules)
 abi/
 lilex/
 
+# Other project dirs
+draw-things-comfyui/
+gama/
+go/
+nyon/
+nyx-nodes3d/
+ovo/
+sources/
+sudocoders/
+wdbx/
+zvim/
+
+# Debug logs
+firebase-debug.log
+
+# SSH (never track)
+.ssh/
+
 # Tracked items (explicitly not ignored):
 # CLAUDE.md
 # .gitconfig
+# .gitignore
 # .zshrc
 # .zprofile
