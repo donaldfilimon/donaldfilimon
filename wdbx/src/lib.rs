@@ -1,4 +1,4 @@
-use mlx_rs::{Device, Stream};
+use mlx_rs::{Array, Device, Stream};
 
 pub fn get_default_device() -> Device {
     Device::default()
@@ -6,4 +6,24 @@ pub fn get_default_device() -> Device {
 
 pub fn get_default_stream() -> Stream {
     Stream::default()
+}
+
+pub fn add(a: &Array, b: &Array) -> Array {
+    a + b
+}
+
+pub fn sub(a: &Array, b: &Array) -> Array {
+    a - b
+}
+
+pub fn mul(a: &Array, b: &Array) -> Array {
+    a * b
+}
+
+pub fn div(a: &Array, b: &Array) -> Array {
+    a / b
+}
+
+pub fn matmul(a: &Array, b: &Array) -> Array {
+    mlx_rs::ops::matmul(a, b).expect("Matmul failed")
 }

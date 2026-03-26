@@ -4,11 +4,11 @@
 - [x] Task: Project structure and MLX initialization (6b773bc)
     - [x] Write tests for MLX device and stream initialization
     - [x] Implement MLX initialization logic
-- [ ] Task: Core Tensor Operations
-    - [ ] Write tests for basic tensor arithmetic (add, sub, mul, div)
-    - [ ] Implement core tensor arithmetic functions
-    - [ ] Write tests for matrix multiplication (matmul)
-    - [ ] Implement matmul wrapper
+- [x] Task: Core Tensor Operations
+    - [x] Write tests for basic tensor arithmetic (add, sub, mul, div)
+    - [x] Implement core tensor arithmetic functions
+    - [x] Write tests for matrix multiplication (matmul)
+    - [x] Implement matmul wrapper
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Foundation and Tensor Operations' (Protocol in workflow.md)
 
 ## Phase 2: Simple Inference and Benchmarking
