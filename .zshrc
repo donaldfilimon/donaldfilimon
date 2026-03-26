@@ -1,16 +1,37 @@
-export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
-export PATH="/opt/homebrew/opt/swift/bin:$PATH"
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+# eval "$(~/.local/bin/agent shell-integration zsh)"
+# Completions
+fpath+=~/.zfunc
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
 
-# === ABI & Lilex Development ===
-alias abi='cd ~/abi'
-alias lilex='cd ~/lilex'
-alias abt='cd ~/abi && zig build test --summary all'
-alias abf='cd ~/abi && zig build feature-tests --summary all'
-alias abc='cd ~/abi && zig build full-check'
-alias abl='cd ~/abi && zig build lint'
-alias abx='cd ~/abi && zig build fix'
-alias lbt='cd ~/lilex && cargo test --no-default-features'
-alias lbc='cd ~/lilex && cargo clippy --all-targets --no-default-features'
-alias lbf='cd ~/lilex && cargo fmt --all'
-alias lbb='cd ~/lilex && cargo build --no-default-features'
+# Bun completions
+if [ -s "$HOME/.bun/_bun" ]; then
+  source "$HOME/.bun/_bun"
+fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/donaldfilimon/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/donaldfilimon/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/donaldfilimon/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/donaldfilimon/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+# Zig + ZLS (managed by tools/zigup.sh --link)
+export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/donaldfilimon/.bun/_bun" ] && source "/Users/donaldfilimon/.bun/_bun"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="$HOME/.zvm/bin:$PATH"
+export PATH="$HOME/.zvm/self:$PATH"
+export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
+export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
