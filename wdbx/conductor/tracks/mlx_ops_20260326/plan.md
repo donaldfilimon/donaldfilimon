@@ -1,9 +1,9 @@
 # Implementation Plan: Implement basic MLX tensor operations and inference benchmark
 
 ## Phase 1: Foundation and Tensor Operations
-- [ ] Task: Project structure and MLX initialization
-    - [ ] Write tests for MLX device and stream initialization
-    - [ ] Implement MLX initialization logic
+- [x] Task: Project structure and MLX initialization
+    - [x] Write tests for MLX device and stream initialization
+    - [x] Implement MLX initialization logic
 - [ ] Task: Core Tensor Operations
     - [ ] Write tests for basic tensor arithmetic (add, sub, mul, div)
     - [ ] Implement core tensor arithmetic functions

@@ -1,0 +1,10 @@
+[package]
+name = "wdbx"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = "4.6.0"
+mlx-rs = { version = "0.25.3", features = ["metal"] }
+tokio = { version = "1.50.0", features = ["full"] }
+wgpu = "29.0.1"
