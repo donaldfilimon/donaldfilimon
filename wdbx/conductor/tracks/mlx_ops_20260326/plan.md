@@ -4,7 +4,7 @@
 - [x] Task: Project structure and MLX initialization (6b773bc)
     - [x] Write tests for MLX device and stream initialization
     - [x] Implement MLX initialization logic
-- [x] Task: Core Tensor Operations
+- [x] Task: Core Tensor Operations (12541e4)
     - [x] Write tests for basic tensor arithmetic (add, sub, mul, div)
     - [x] Implement core tensor arithmetic functions
     - [x] Write tests for matrix multiplication (matmul)
