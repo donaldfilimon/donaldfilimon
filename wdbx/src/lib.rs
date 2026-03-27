@@ -42,3 +42,23 @@ impl Linear {
         add(&matmul(x, &self.weight), &self.bias)
     }
 }
+
+pub fn benchmark_matmul(size: usize, iters: usize) -> f64 {
+    let shape = [size as i32, size as i32];
+    // mlx_rs::random::uniform::<Lower, T>(lower, upper, shape, key)
+    // Using default key (None) and Float32
+    let a = mlx_rs::random::uniform::<f32, f32>(0.0, 1.0, &shape, None).expect("Failed to create random array");
+    let b = mlx_rs::random::uniform::<f32, f32>(0.0, 1.0, &shape, None).expect("Failed to create random array");
+    
+    // Warm-up
+    let c = matmul(&a, &b);
+    c.eval().expect("Failed to evaluate");
+
+    let start = std::time::Instant::now();
+    for _ in 0..iters {
+        let c = matmul(&a, &b);
+        c.eval().expect("Failed to evaluate");
+    }
+    let duration = start.elapsed();
+    duration.as_secs_f64() / iters as f64
+}

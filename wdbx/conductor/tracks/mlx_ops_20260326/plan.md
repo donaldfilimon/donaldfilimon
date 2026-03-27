@@ -15,9 +15,9 @@
 - [x] Task: Linear Layer Implementation
     - [x] Write tests for a simple Linear layer forward pass
     - [x] Implement Linear layer logic
-- [ ] Task: CLI Benchmark Command
-    - [ ] Write tests for CLI command parsing for `benchmark`
-    - [ ] Implement `benchmark` command using `clap`
-    - [ ] Write tests for benchmark execution logic
-    - [ ] Implement benchmark execution and result reporting
+- [x] Task: CLI Benchmark Command
+    - [x] Write tests for CLI command parsing for `benchmark`
+    - [x] Implement `benchmark` command using `clap`
+    - [x] Write tests for benchmark execution logic
+    - [x] Implement benchmark execution and result reporting
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Simple Inference and Benchmarking' (Protocol in workflow.md)
