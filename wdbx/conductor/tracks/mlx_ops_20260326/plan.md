@@ -15,7 +15,7 @@
 - [x] Task: Linear Layer Implementation
     - [x] Write tests for a simple Linear layer forward pass
     - [x] Implement Linear layer logic
-- [x] Task: CLI Benchmark Command
+- [x] Task: CLI Benchmark Command (5b506e6)
     - [x] Write tests for CLI command parsing for `benchmark`
     - [x] Implement `benchmark` command using `clap`
     - [x] Write tests for benchmark execution logic
