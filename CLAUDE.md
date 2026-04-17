@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+his file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Repository Overview
 
@@ -17,7 +17,7 @@ Each project has its own `CLAUDE.md`, `AGENTS.md`, and task tracking (`tasks/tod
 
 | Tool | Version | Source | Notes |
 |------|---------|--------|-------|
-| Zig | `0.16.0-dev.2984+cb7d2b056` | `abi/.zigversion` | Dev build pinned; do not upgrade without testing |
+| Zig | `0.16.0-dev.3153+d6f43caad` | `abi/.zigversion` | Dev build pinned; do not upgrade without testing |
 | Rust | stable (edition 2024) | `lilex/rust-toolchain.toml` | Components: rustfmt, clippy |
 | trunk | latest | `cargo install trunk` | Required for Tauri/WASM desktop builds |
 | cargo-watch | latest | `cargo install cargo-watch` | Optional; useful for dev loop |
