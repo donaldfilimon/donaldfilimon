@@ -115,3 +115,5 @@ firebase-debug.log
 # .gitignore
 # .zshrc
 # .zprofile
+
+gha-creds-*.json

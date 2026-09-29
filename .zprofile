@@ -1,6 +1,9 @@
 # Homebrew base
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
+# Keep PATH entries unique across login shell setup.
+typeset -U path PATH
+
 # Homebrew opt paths
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
